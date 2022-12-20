@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ConsoleAppOne
 {
@@ -26,6 +27,75 @@ namespace ConsoleAppOne
         public static string collegeName = "JNTU";
 
         public long number = stdNumber; //TypeCasting ->Implicit typecasting , Widening
+
+
+
+        //Modifier[opt]    ReturnType    Name(){  body }
+        //Modifier[opt]    ReturnType    Name(arguments...[opt]){  body }
+        // 0 0 , 0 1 , 1 0 , 1 1
+        //no o/p - no i/p ,  no o/p -  i/p
+        //psvm
+        //Program myprogram = new Program();
+        //myprogram.
+        public static void Main(String[] inputs)
+        {
+            Console.WriteLine("Welcome to Selenium with C# - Console");
+            Debug.WriteLine("Welcome to Selenium with C# - Debug ");
+            //comment ->//
+            //group comment -> CTRL+K+C
+            //group un-comment -> CTRL+K+U
+            //return 22;
+            ComposeAndSendAnEmail();
+            ReplyToAnEmail();
+            ForwardAnEmail();
+            DeleteAnEmail();
+            ComposeAndSendAnEmail();
+            ReplyToAnEmail();
+            ForwardAnEmail();
+            DeleteAnEmail();
+            ComposeAndSendAnEmail();
+            ReplyToAnEmail();
+            ForwardAnEmail();
+            DeleteAnEmail();
+            ComposeAndSendAnEmail();
+            ReplyToAnEmail();
+            ForwardAnEmail();
+            DeleteAnEmail();
+            ComposeAndSendAnEmail();
+            ReplyToAnEmail();
+            ForwardAnEmail();
+            DeleteAnEmail();
+            ComposeAndSendAnEmail();
+            ReplyToAnEmail();
+            ForwardAnEmail();
+            DeleteAnEmail();
+            ComposeAndSendAnEmail();
+            ReplyToAnEmail();
+            ForwardAnEmail();
+            DeleteAnEmail();
+        }
+        public static void ComposeAndSendAnEmail() // 0 0 
+        {
+            Console.WriteLine("Test Case : Compose And Send An Email - Console");
+            Debug.WriteLine("Test Case : Compose And Send An Email - Debug ");
+        }
+
+        public static void ReplyToAnEmail() // 0 0 
+        {
+            Console.WriteLine("Test Case : Reply to An Email - Console");
+            Debug.WriteLine("Test Case : Reply to An Email - Debug ");
+        }
+
+        public static void ForwardAnEmail() // 0 0 
+        {
+            Console.WriteLine("Test Case : Forward An Email - Console");
+            Debug.WriteLine("Test Case : Forward An Email - Debug ");
+        }
+        public static void DeleteAnEmail() // 0 0 
+        {
+            Console.WriteLine("Test Case : Delete An Email - Console");
+            Debug.WriteLine("Test Case : Delete An Email - Debug ");
+        }
 
 
 
