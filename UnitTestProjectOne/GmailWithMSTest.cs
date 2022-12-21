@@ -11,7 +11,9 @@ namespace UnitTestProjectOne
     [TestClass]
     public class GmailWithMSTest
     {
-        
+        /// <summary>
+        /// Modifier     ReturnType  Name(){    body       }
+        /// </summary>
         [TestMethod]   //@Test
         public  void ComposeAndSendAnEmail() // 0 0 
         {
