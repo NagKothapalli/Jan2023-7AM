@@ -54,5 +54,28 @@ namespace UnitTestProjectOne
             Debug.WriteLine("Logout From Application - Debug - From Intialize ");
         }
 
+        public void Addition()
+        {
+
+        }
+         void Addition(String x)
+        {
+
+        }
+        public void Addition(int num)
+        {
+
+        }
+
+        public void Addition(int a,int b)
+        {
+
+        }
+        public void Addition(int a, int b,int c)
+        {
+
+        }
+
+
     }
 }
