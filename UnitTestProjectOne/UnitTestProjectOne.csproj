@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreConcepts\ConditionalStatements.cs" />
+    <Compile Include="CoreConcepts\LoopingStatements.cs" />
     <Compile Include="GmailWithMSTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
