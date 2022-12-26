@@ -58,10 +58,80 @@ namespace UnitTestProjectOne.CoreConcepts
             for(int t=1;t<=180;t=t+1)
             {
                 Debug.WriteLine("Count up Timer :" + t );
-                //if()
                 Debug.WriteLine("Wait for My Friend");
+                if (t== timeHeComes)
+                {
+                    Debug.WriteLine("Stop Waiting and go home");
+                    break;
+                }               
             }
         }
+        [TestMethod]
+        public void FindStudent()
+        {
+            Boolean result = false;
+            for(int i=1;i<=10;i++)
+            {
+                Debug.WriteLine("Student Num Searched :" + i);
+                if(i==15)
+                {                    
+                    result = true;
+                    break;
+                }               
+            }
+            if(result==true)
+            {
+                Debug.WriteLine("Found the Student");
+            }
+            else
+            {
+                Debug.WriteLine("Not Found the Student");
+            }
+        }
+        [TestMethod]
+        public void FindStudent_Test()
+        {
+           Boolean output =  FindStudent(22);
+            if (output == true)
+            {
+                Debug.WriteLine("Found the Student and give him a Book");
+            }
+            else
+            {
+                Debug.WriteLine("Not Found the Student");
+            }
+        }
+        public Boolean FindStudent(int rollNum)
+        {
+            Debug.WriteLine("You are Searching for Student Num  :" + rollNum);
+            Boolean result = false;
+            for (int i = 1; i <= 100; i++)
+            {
+                //Debug.WriteLine("Student Num Searched :" + i);
+                if (i == rollNum)
+                {
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        }
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
 }
