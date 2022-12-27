@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoreConcepts\ArraysInCsharp.cs" />
     <Compile Include="CoreConcepts\ConditionalStatements.cs" />
     <Compile Include="CoreConcepts\LoopingStatements.cs" />
     <Compile Include="GmailWithMSTest.cs" />

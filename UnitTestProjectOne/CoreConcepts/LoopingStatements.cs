@@ -116,22 +116,102 @@ namespace UnitTestProjectOne.CoreConcepts
             }
             return result;
         }
+       
+        //break statement will skip the complete for loop / exit from for loop
+        //continue will skip one particular iteration     
 
+        //  a / b  : Q    ,     a % b -> R
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //Logic for even number : if the given number is divisible by 2 that number is even
+        [TestMethod]
+        public void GenerateEvenNumbers()
+        {
+            for(int i=1;i<=100;i++)
+            {
+                if((i%2) == 0)
+                {
+                    Debug.WriteLine("Even Number :" + i);
+                }
+            }
         }
+        [TestMethod]
+        public void GenerateOddNumbers()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                if (!((i % 2) == 0))
+                {
+                    Debug.WriteLine("Odd Number :" + i);
+                }
+            }
+        }
+        //Apply color to all 100 steps excluding the steps multiples of 10 [ 10 , 20 , 30 ...]
+        [TestMethod]
+        public void ApplyColorByExcluding10Multiples()
+        {
+            for(int i=1;i<=100;i++)
+            {
+                if((i%10) == 0)
+                {
+                    Debug.WriteLine("Excluding this Step :" + i);
+                    Debug.WriteLine("Apply RED Color To Step :" + i);
+                    continue; //skip the iteration
+                }
+                Debug.WriteLine("Apply Green Color To Step :" + i);
+            }
+        }
+        [TestMethod]
+        public void ApplyColorWithDoWhile()
+        {
+            int i = 1;
+            do
+            {
+                //Activity
+                Debug.WriteLine("Apply Green Color To Step :" + i);
+                i++;
+            }
+            while (i <= 100);
+        }
+
+        [TestMethod]
+        public void ApplyColorWithWhile()
+        {
+            int i = 1;
+            while (i <= 100) 
+            {
+                //Activity
+                Debug.WriteLine("Apply Green Color To Step :" + i);
+                i++;
+            }            
+        }
+
+        //Nested for Loop  [ For Loop inside For Loop]
+        //We have Building with 10 floors , apply different color to different floor 
+        [TestMethod]
+        public void NestedForLoop()
+        {
+            for(int i=1;i<=10;i++) //Here i value will be used to count FLOOR numbers 
+            {
+                Debug.WriteLine("****************Apply Color To Steps in FLOOR NUMBER :" + i);
+                //in first fllor start from 1st step go till 20th step and apply color
+                for(int j=1;j<=20;j++)
+                {
+                    Debug.WriteLine("Apply Color To Step :" + j);
+                }
+                
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
