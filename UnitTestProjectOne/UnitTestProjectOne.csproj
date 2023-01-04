@@ -52,6 +52,7 @@
     <Compile Include="CoreConcepts\ArraysInCsharp.cs" />
     <Compile Include="CoreConcepts\ConditionalStatements.cs" />
     <Compile Include="CoreConcepts\LoopingStatements.cs" />
+    <Compile Include="CoreConcepts\StringOperations.cs" />
     <Compile Include="GmailWithMSTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
