@@ -54,6 +54,9 @@
     <Compile Include="CoreConcepts\LoopingStatements.cs" />
     <Compile Include="CoreConcepts\StringOperations.cs" />
     <Compile Include="GmailWithMSTest.cs" />
+    <Compile Include="MultilevelInheritance\RComponents.cs" />
+    <Compile Include="MultilevelInheritance\TestScenarios.cs" />
+    <Compile Include="MultilevelInheritance\TestSuites.cs" />
     <Compile Include="SimpleInheritance\ReusableComponents.cs" />
     <Compile Include="SimpleInheritance\TestMethods-M1.cs" />
     <Compile Include="UnitTest1.cs" />
