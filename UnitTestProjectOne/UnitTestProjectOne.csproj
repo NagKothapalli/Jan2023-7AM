@@ -54,6 +54,11 @@
     <Compile Include="CoreConcepts\LoopingStatements.cs" />
     <Compile Include="CoreConcepts\StringOperations.cs" />
     <Compile Include="GmailWithMSTest.cs" />
+    <Compile Include="HeairarchialInheritance\RComponents_Parent.cs" />
+    <Compile Include="HeairarchialInheritance\TestScenarios_M1_Child1.cs" />
+    <Compile Include="HeairarchialInheritance\TestScenarios_M2_Child2.cs" />
+    <Compile Include="InheritanceByObject\GmailRComponents.cs" />
+    <Compile Include="InheritanceByObject\GmailScenarios.cs" />
     <Compile Include="MultilevelInheritance\RComponents.cs" />
     <Compile Include="MultilevelInheritance\TestScenarios.cs" />
     <Compile Include="MultilevelInheritance\TestSuites.cs" />
