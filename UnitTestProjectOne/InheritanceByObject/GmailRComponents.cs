@@ -9,6 +9,21 @@ namespace UnitTestProjectOne.InheritanceByObject
 {
     public class GmailRComponents
     {
+        public GmailRComponents() //Default
+        {
+            Debug.WriteLine("Open Google Chrome as default Browser  ");
+            Debug.WriteLine("Clean the Data Base ");
+        }
+        public GmailRComponents(string browser)
+        {
+            Debug.WriteLine("Open Browser : " + browser);//if(browser)
+            Debug.WriteLine("Clean the Data Base ");
+        }
+        public GmailRComponents(string browser,int version)
+        {
+            Debug.WriteLine("Open Browser : " + browser + "  , Version : "+ version  );//if(browser)
+            Debug.WriteLine("Clean the Data Base ");
+        }
         //******************ReusableComponents********************
         public void LaunchApplication()
         {
@@ -23,7 +38,17 @@ namespace UnitTestProjectOne.InheritanceByObject
         }
         public void LoginToApplication()
         {
-            Debug.WriteLine("Login to Application  ");
+            Debug.WriteLine("Login to Application with default user details ");
+            // 10 lines of selenium code
+        }
+        public void LoginToApplication(string username)
+        {
+            Debug.WriteLine("Login to Application with User as: " + username);
+            // 10 lines of selenium code
+        }
+        public void LoginToApplication(string username,string password)
+        {
+            Debug.WriteLine("Login to Application with given User credentials: " + username + password);
             // 10 lines of selenium code
         }
         //[TestCleanup] //@After

@@ -12,14 +12,16 @@ namespace UnitTestProjectOne.InheritanceByObject
     public class GmailScenarios
     {
         //Modifier[opt]  ClassName  objectName  = new Constructor();
-        public GmailRComponents gmailRComponents = new GmailRComponents();//default constructor
-
+        //public GmailRComponents gmailRComponents = new GmailRComponents();//default constructor
+        //public GmailRComponents gmailRComponents = new GmailRComponents("firefox");
+        public GmailRComponents gmailRComponents = new GmailRComponents("firefox",106);
+        //Execution Flow : Class Variables -> Constructor of the class -> Test Intialize -> Test Method
         [TestMethod]   //@Test
         public void ComposeAndSendAnEmail() // 0 0 
         {
             Debug.WriteLine("Test Case : Compose And Send An Email - Debug ");
             gmailRComponents.LaunchApplication();
-            gmailRComponents.LoginToApplication();
+            gmailRComponents.LoginToApplication("nag");
             gmailRComponents.Compose();
             gmailRComponents.Send();
             gmailRComponents.LogoutFromApplication();

@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestProjectOne.SimpleInheritance
 {
     [TestClass]
-    //              Child             Parent
+    //              Child      extends       Parent
     public class TestMethods_M1 : ReusableComponents
     {
         [TestMethod]   //@Test

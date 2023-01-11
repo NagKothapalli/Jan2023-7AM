@@ -8,7 +8,15 @@ using System.Threading.Tasks;
 namespace UnitTestProjectOne.SimpleInheritance
 {
     public class ReusableComponents
-    {   
+    {
+        public ReusableComponents()
+        {
+            Debug.WriteLine("Open Google Chrome Browser - Default Constructor ");
+        }
+        public ReusableComponents(string browser)
+        {
+            Debug.WriteLine("Open Browser :"+ browser);
+        }
         //******************ReusableComponents********************
         public void LaunchApplication()
         {
