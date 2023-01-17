@@ -59,6 +59,9 @@
     <Compile Include="HeairarchialInheritance\TestScenarios_M2_Child2.cs" />
     <Compile Include="InheritanceByObject\GmailRComponents.cs" />
     <Compile Include="InheritanceByObject\GmailScenarios.cs" />
+    <Compile Include="Interface\IAirthmeticOperations.cs" />
+    <Compile Include="Interface\MiniCalculator.cs" />
+    <Compile Include="Interface\SuperMarket.cs" />
     <Compile Include="MultilevelInheritance\RComponents.cs" />
     <Compile Include="MultilevelInheritance\TestScenarios.cs" />
     <Compile Include="MultilevelInheritance\TestSuites.cs" />
