@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace ConsoleAppOne
 {
@@ -45,6 +47,9 @@ namespace ConsoleAppOne
             //group comment -> CTRL+K+C
             //group un-comment -> CTRL+K+U
             //return 22;
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("https://gmail.com");
+            driver.FindElement(By.Id("identifierId")).SendKeys("nag022");
             ComposeAndSendAnEmail();
             ReplyToAnEmail();
             ForwardAnEmail();

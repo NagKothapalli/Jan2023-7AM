@@ -45,5 +45,10 @@ namespace UnitTestProjectOne.Interface
             int diff = a - b;
             return diff;
         }
+        public int Modulus(int a, int b)
+        {
+            int rem = a % b;
+            return rem;
+        }
     }
 }
