@@ -53,7 +53,8 @@ namespace UnitTestProjectOne.SeleniumPractice
             Debug.WriteLine("Test Case : Login To Application");
             //By by = new By();
             //IWebDriver driver = new ChromeDriver();
-            driver.FindElement(By.Name("identifier")).SendKeys("nag022");
+            //driver.FindElement(By.Name("identifier")).SendKeys("nag022");
+            driver.FindElement(By.Id("identifierId")).SendKeys("nag022");
             IReadOnlyCollection<IWebElement> elements = driver.FindElements(By.ClassName("VfPpkd-vQzf8d"));
             //IWebElement nextBtn = elements.ElementAt(1); //index = 0 1 2 3 .....
             //nextBtn.Click();
@@ -98,7 +99,56 @@ namespace UnitTestProjectOne.SeleniumPractice
             }
         }
 
-
+        //XPATH - Absolute xpath / Fixed xapth / Static xpath
+        //  /html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/button 
+        //Relative XPATH - is like a SQL Select query - select EmpName from Employees where EmpID=22
+        //  //tagName[@attribute='value']
+        //tagName[@attribute1='value1' and @attribute2='value2']
+        //tagName[text()='value']
+        //tagName[text()='value' and @attribute='value' ]
+        [TestMethod]
+        public void ForgotEmail()
+        {
+            //driver.FindElement(By.TagName("button")).Click();
+            /*IReadOnlyCollection<IWebElement> elements = driver.FindElements(By.TagName("button"));
+            for (int i = 0; i < elements.Count; i++)
+            {
+                IWebElement element = elements.ElementAt(i);
+                String txt = element.Text;
+                Debug.WriteLine("Trext on the element :" + txt);
+                if (txt.Equals("Forgot email?"))
+                {
+                    element.Click();
+                    break;
+                }
+            }*/
+            //driver.FindElement(By.XPath("/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/button")).Click();
+            driver.FindElement(By.XPath("//button[text()='Forgot email?']")).Click();
+        }
+        [TestMethod]
+        public void LearnMore()
+        {
+            //driver.FindElement(By.TagName("a")).Click();
+            /*IReadOnlyCollection<IWebElement> elements = driver.FindElements(By.TagName("a"));
+            for (int i = 0; i < elements.Count; i++)
+            {
+                IWebElement element = elements.ElementAt(i);
+                String txt = element.Text;
+                Debug.WriteLine("Trext on the element :" + txt);
+                if (txt.Equals("Learn more"))
+                {
+                    element.Click();
+                    break;
+                }
+            }*/
+            //driver.FindElement(By.LinkText("Learn more")).Click();
+            driver.FindElement(By.PartialLinkText("Learn")).Click();
+        }
+        [TestMethod]
+        public void Help()
+        {
+            driver.FindElement(By.LinkText("Help")).Click();
+        }
 
 
 
