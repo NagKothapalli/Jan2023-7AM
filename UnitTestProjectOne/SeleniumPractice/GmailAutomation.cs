@@ -77,35 +77,64 @@ namespace UnitTestProjectOne.SeleniumPractice
             email.SendKeys("nag022");*/
 
         }
+        [TestMethod]
+        public void GmailLogin()
+        {
+            driver.FindElement(By.XPath("//input[@type='email']")).SendKeys("nag022");
+            driver.FindElement(By.XPath("//span[text()='Next']")).Click();
+        }
         //Selectors / Locators from By class : id , name , class , css , tagname, linktext , partialLinktext , xpath
         // WebDriver class : FindElement , FindElements , Navigate , GotoURL , Title , CurrentURL , WindowHAndle
-        // WebElement : Click , Clear , SendKeys , Text ,
+        // WebElement : Click , Clear , SendKeys , Text , GetAttribute
+        // Actions : Keyboard events and Mouse events 
+        // JavaScriptExecutor : Click
         
         [TestMethod]
         public void CreateAccount()
         {
-            driver.FindElement(By.Name("identifier")).SendKeys("nag022");
-            IReadOnlyCollection<IWebElement> elements = driver.FindElements(By.ClassName("VfPpkd-vQzf8d"));
-            for (int i = 0; i < elements.Count; i++)
-            {
-                IWebElement element = elements.ElementAt(i);
-                String txt = element.Text;
-                Debug.WriteLine("Trext on the element :" + txt);
-                if (txt.Equals("Create account"))
-                {
-                    element.Click();
-                    break;
-                }
-            }
+            //driver.FindElement(By.Name("identifier")).SendKeys("nag022");
+            /* IReadOnlyCollection<IWebElement> elements = driver.FindElements(By.ClassName("VfPpkd-vQzf8d"));
+             for (int i = 0; i < elements.Count; i++)
+             {
+                 IWebElement element = elements.ElementAt(i);
+                 String txt = element.Text;
+                 Debug.WriteLine("Trext on the element :" + txt);
+                 if (txt.Equals("Create account"))
+                 {
+                     element.Click();
+                     break;
+                 }
+             }*/
+            driver.FindElement(By.XPath("//span[@class='VfPpkd-vQzf8d' and text()='Create account']")).Click();
         }
 
         //XPATH - Absolute xpath / Fixed xapth / Static xpath
         //  /html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/button 
         //Relative XPATH - is like a SQL Select query - select EmpName from Employees where EmpID=22
-        //  //tagName[@attribute='value']
-        //tagName[@attribute1='value1' and @attribute2='value2']
+
+        //tagName[@attribute='value']
+        //Example    ->  //input[@type='email']
+
         //tagName[text()='value']
+        //Example    ->  //span[text()='Next']
+
+        //tagName[@attribute1='value1' and @attribute2='value2']
+        //Example    ->  //input[@class='whsOnd zHQkBf' and @type='email']
+
         //tagName[text()='value' and @attribute='value' ]
+        // Ex : //span[@class='VfPpkd-vQzf8d' and text()='Create account']
+
+        //contains
+
+        //tagName[@attribute='value']
+
+        //tagName[text()='value']
+
+        //tagName[@attribute1='value1' and @attribute2='value2']
+
+        //tagName[text()='value' and @attribute='value' ]
+
+        //tagName can be a html , head , body , span , input, div , a , img , table , tr , td , ul , li ......
         [TestMethod]
         public void ForgotEmail()
         {
@@ -142,7 +171,9 @@ namespace UnitTestProjectOne.SeleniumPractice
                 }
             }*/
             //driver.FindElement(By.LinkText("Learn more")).Click();
-            driver.FindElement(By.PartialLinkText("Learn")).Click();
+            //driver.FindElement(By.PartialLinkText("Learn")).Click();
+            //driver.FindElement(By.XPath("//a[text()='Learn more']")).Click();
+            driver.FindElement(By.XPath("//a[@aria-label='Learn more about using Guest mode']")).Click();
         }
         [TestMethod]
         public void Help()

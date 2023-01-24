@@ -72,7 +72,9 @@
     <Compile Include="MultilevelInheritance\RComponents.cs" />
     <Compile Include="MultilevelInheritance\TestScenarios.cs" />
     <Compile Include="MultilevelInheritance\TestSuites.cs" />
+    <Compile Include="SeleniumPractice\ApsrtcAutomation.cs" />
     <Compile Include="SeleniumPractice\GmailAutomation.cs" />
+    <Compile Include="SeleniumPractice\RelativeXpath.cs" />
     <Compile Include="SimpleInheritance\ReusableComponents.cs" />
     <Compile Include="SimpleInheritance\TestMethods-M1.cs" />
     <Compile Include="UnitTest1.cs" />
