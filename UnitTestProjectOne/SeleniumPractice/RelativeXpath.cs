@@ -56,5 +56,9 @@ namespace UnitTestProjectOne.SeleniumPractice
 
         //Parent child 
 
+        //Dynamic Xpath : Where we can pass some dynamic value in to the xpath string in run time 
+
+        //a[text()='"+jDate+"']
+
     }
 }
