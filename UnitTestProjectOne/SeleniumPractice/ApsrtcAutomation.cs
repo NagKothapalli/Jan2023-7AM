@@ -28,6 +28,8 @@ namespace UnitTestProjectOne.SeleniumPractice
             driver.Navigate().GoToUrl("https://www.apsrtconline.in/");
         }
         //OpenQA.Selenium.UnhandledAlertException: unexpected alert open: {Alert text : Please select end place.}
+        //After Closing window : OpenQA.Selenium.NoSuchWindowException: no such window: target window already closed
+        //After Quit method : System.ObjectDisposedException: Cannot access a disposed object.
         [TestMethod]
         public void BookBusTicket()
         {
@@ -63,6 +65,8 @@ namespace UnitTestProjectOne.SeleniumPractice
         String ToCityTxt = "//input[contains(@title,'Enter alighting place')]";
         String OpenCalendarBtn = "//input[@name='txtJourneyDate']";
         String SearchButtonBtn = "//input[@value='Check Availability']";
+        String TimeTableLink = "//a[@title='TimeTable / Track']";
+        String AllServicesLink = "//a[text()='All services Time Table & Tracking']";
         [TestMethod]
         public void BookBusTicket_xpath()
         {
@@ -92,6 +96,33 @@ namespace UnitTestProjectOne.SeleniumPractice
         {
             driver.FindElement(By.XPath("//a[text()='" + jDate + "']")).Click();
         }
+
+        [TestMethod]
+        public void HandleMultipleWindows()
+        {
+            Debug.WriteLine("Test Case : HandleMultipleWindows");
+            ClickElement(TimeTableLink);
+            ClickElement(AllServicesLink);
+            IReadOnlyCollection<String> allWindows = driver.WindowHandles;
+            for(int i=0;i< allWindows.Count;i++)
+            {
+                String sessionID = allWindows.ElementAt(i);
+                Debug.WriteLine("All Session IDs :" + sessionID);                
+            }
+            Debug.WriteLine("First Window Title :" + driver.Title);
+            driver.SwitchTo().Window(allWindows.ElementAt(1)); // Switch to second window
+            Debug.WriteLine("Second Window Title :" + driver.Title);
+            Thread.Sleep(2000);
+            driver.Close(); // Close method will always close the current active window
+            //driver.Quit(); // Quit method will kill the chromdriver.exe process. All sessions will be terminated
+            //After executing the quit method the driver value will be set to NULL
+            driver.SwitchTo().Window(allWindows.ElementAt(0));
+            Debug.WriteLine("First Window Title after coming back :" + driver.Title);
+            driver.Quit();
+        }
+
+        //iframe  - RedBus
+
         //****************Generic functions / Utility functions **************************
         public IWebElement ReturnElement(String myxpath)
         {            

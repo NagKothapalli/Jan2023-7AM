@@ -84,7 +84,7 @@ namespace UnitTestProjectOne.SeleniumPractice
             driver.FindElement(By.XPath("//span[text()='Next']")).Click();
         }
         //Selectors / Locators from By class : id , name , class , css , tagname, linktext , partialLinktext , xpath
-        // WebDriver class : FindElement , FindElements , Navigate , GotoURL , Title , CurrentURL , WindowHAndle
+        // WebDriver class : FindElement , FindElements , Navigate , GotoURL , Title , CurrentURL , WindowHandle , WindowHandles , Alert , Iframe
         // WebElement : Click , Clear , SendKeys , Text , GetAttribute
         // Actions : Keyboard events and Mouse events 
         // JavaScriptExecutor : Click
