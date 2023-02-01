@@ -73,6 +73,7 @@
     <Compile Include="MultilevelInheritance\TestScenarios.cs" />
     <Compile Include="MultilevelInheritance\TestSuites.cs" />
     <Compile Include="SeleniumPractice\ApsrtcAutomation.cs" />
+    <Compile Include="SeleniumPractice\DriverUtilities.cs" />
     <Compile Include="SeleniumPractice\GmailAutomation.cs" />
     <Compile Include="SeleniumPractice\RedBusAutomation.cs" />
     <Compile Include="SeleniumPractice\RelativeXpath.cs" />

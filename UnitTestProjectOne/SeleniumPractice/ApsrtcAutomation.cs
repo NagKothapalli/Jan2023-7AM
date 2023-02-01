@@ -13,13 +13,15 @@ using OpenQA.Selenium.Interactions;
 namespace UnitTestProjectOne.SeleniumPractice
 {
     [TestClass]
-    public class ApsrtcAutomation
+    public class ApsrtcAutomation 
     {
         IWebDriver driver; //null
+        DriverUtilities dUtils;
         public ApsrtcAutomation()
         {
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(); // 1234
             driver.Manage().Window.Maximize();
+            dUtils = new DriverUtilities(driver); //1234
         }
         [TestInitialize]
         public void LaunchApplication()
@@ -53,12 +55,12 @@ namespace UnitTestProjectOne.SeleniumPractice
             Actions actions = new Actions(driver);
             IWebElement boardingPlace = driver.FindElement(By.XPath("//input[contains(@title,'Enter bording place')]"));
             actions.MoveToElement(boardingPlace).Click().SendKeys("HYDERABAD").Pause(TimeSpan.FromSeconds(1)).SendKeys(Keys.Enter).Build().Perform();
-            EnterText("//input[contains(@title,'Enter alighting place')]", "GUNTUR");
-            FixedWait(1);
-            ClickEnter();            
-            ClickElement("//input[@name='txtJourneyDate']");
+            dUtils.EnterText("//input[contains(@title,'Enter alighting place')]", "GUNTUR");
+            dUtils.FixedWait(1);
+            dUtils.ClickEnter();
+            dUtils.ClickElement("//input[@name='txtJourneyDate']");
             SelectJourneyDate("31");
-            ClickElement("//input[@value='Check Availability']");
+            dUtils.ClickElement("//input[@value='Check Availability']");
         }
         //**********************************XPATHS*************************
         String FromCityTxt = "//input[contains(@title,'Enter bording place')]";
@@ -70,24 +72,24 @@ namespace UnitTestProjectOne.SeleniumPractice
         [TestMethod]
         public void BookBusTicket_xpath()
         {
-            EnterText(FromCityTxt, "HYDERABAD");
-            FixedWait(1);
-            ClickEnter();
-            EnterText(ToCityTxt, "GUNTUR");
-            FixedWait(1);
-            ClickEnter();
-            ClickElement(OpenCalendarBtn);
+            dUtils.EnterText(FromCityTxt, "HYDERABAD");
+            dUtils.FixedWait(1);
+            dUtils.ClickEnter();
+            dUtils.EnterText(ToCityTxt, "GUNTUR");
+            dUtils.FixedWait(1);
+            dUtils.ClickEnter();
+            dUtils.ClickElement(OpenCalendarBtn);
             SelectJourneyDate("31");
-            ClickElement(SearchButtonBtn);
+            dUtils.ClickElement(SearchButtonBtn);
         }
         [TestMethod]
         public void MouseActions()
         {
            // EnterText(FromCityTxt, "HYDERABAD");
             Actions actions = new Actions(driver);
-            EnterText(FromCityTxt, "HYDERABAD");
-            FixedWait(1);
-            actions.MoveToElement(ReturnElement(FromCityTxt)).DoubleClick().Pause(TimeSpan.FromSeconds(1)).ContextClick().Build().Perform();
+            dUtils.EnterText(FromCityTxt, "HYDERABAD");
+            dUtils.FixedWait(1);
+            actions.MoveToElement(dUtils.ReturnElement(FromCityTxt)).DoubleClick().Pause(TimeSpan.FromSeconds(1)).ContextClick().Build().Perform();
             // MoveToElement   - Mouse Hovering
             // ContextCLick  - Right Click
         }
@@ -101,8 +103,8 @@ namespace UnitTestProjectOne.SeleniumPractice
         public void HandleMultipleWindows()
         {
             Debug.WriteLine("Test Case : HandleMultipleWindows");
-            ClickElement(TimeTableLink);
-            ClickElement(AllServicesLink);
+            dUtils.ClickElement(TimeTableLink);
+            dUtils.ClickElement(AllServicesLink);
             IReadOnlyCollection<String> allWindows = driver.WindowHandles;
             for(int i=0;i< allWindows.Count;i++)
             {
@@ -123,40 +125,7 @@ namespace UnitTestProjectOne.SeleniumPractice
 
         //iframe  - RedBus
 
-        //****************Generic functions / Utility functions **************************
-        public IWebElement ReturnElement(String myxpath)
-        {            
-            IWebElement element = driver.FindElement(By.XPath(myxpath));
-            return element;
-            //actions.MoveToElement(element).Click().Build().Perform();
-        }
-        public void ClickElement(String myxpath)
-        {
-            Actions actions = new Actions(driver);
-            IWebElement element = driver.FindElement(By.XPath(myxpath));
-            actions.MoveToElement(element).Click().Build().Perform();
-        }
-        public void EnterText(String myxpath,String text)
-        {
-            Actions actions = new Actions(driver);
-            IWebElement element = driver.FindElement(By.XPath(myxpath));
-            actions.MoveToElement(element).Click().SendKeys(text).Build().Perform();
-        }
-
-        public void ClickEnter()
-        {
-            new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
-        }
-        public void ClickTab()
-        {
-            new Actions(driver).SendKeys(Keys.Tab).Build().Perform();
-        }
-        public void FixedWait(int timeInSeconds)
-        {
-            //Thread.Sleep(1000 * timeInSeconds);
-            new Actions(driver).Pause(TimeSpan.FromSeconds(timeInSeconds)).Build().Perform();
-        }
-        //****************************************************************
+       
         
     }
 
