@@ -72,6 +72,9 @@
     <Compile Include="MultilevelInheritance\RComponents.cs" />
     <Compile Include="MultilevelInheritance\TestScenarios.cs" />
     <Compile Include="MultilevelInheritance\TestSuites.cs" />
+    <Compile Include="PageObjectModel\PageObjects\Home.cs" />
+    <Compile Include="PageObjectModel\PageObjects\Login.cs" />
+    <Compile Include="PageObjectModel\TestCases\TestScenarios.cs" />
     <Compile Include="SeleniumPractice\ApsrtcAutomation.cs" />
     <Compile Include="SeleniumPractice\DriverUtilities.cs" />
     <Compile Include="SeleniumPractice\GmailAutomation.cs" />
@@ -84,6 +87,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PageObjectModel\DriverUtilities\" />
+    <Folder Include="PageObjectModel\GeneralUtilities\" />
+    <Folder Include="PageObjectModel\TestSuites\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
