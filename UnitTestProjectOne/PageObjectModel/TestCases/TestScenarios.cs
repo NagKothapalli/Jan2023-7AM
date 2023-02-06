@@ -26,8 +26,8 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
             driver.Manage().Window.Maximize();
             login = new Login(driver); //1234
             home = new Home(driver); //1234
-            cancelTicket = new CancelTicket();
-            trackService = new TrackService();
+            cancelTicket = new CancelTicket(driver); //1234
+            trackService = new TrackService(driver);//1234
             ticketStatus = new TicketStatus();
         }
         [TestMethod]
