@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using UnitTestProjectOne.PageObjectModel.DriverUtilities;
@@ -28,6 +29,8 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
         //**********************************************************************
         public void BookTicket()
         {
+            //Thread.Sleep(30000);
+            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
             Debug.WriteLine("RC : Book Bus Ticket ");
             dUtils.EnterText(FromCityTxt, "HYDERABAD");
             dUtils.FixedWait(1);

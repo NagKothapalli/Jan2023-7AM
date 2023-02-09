@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using UnitTestProjectOne.PageObjectModel.DriverUtilities;
 using UnitTestProjectOne.PageObjectModel.PageObjects;
 
 namespace UnitTestProjectOne.PageObjectModel.TestCases
@@ -22,13 +23,14 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
         TicketStatus ticketStatus ;
         public TestScenarios()
         {
-            driver = new ChromeDriver(); // 1234 
+            //driver = new ChromeDriver(); // 1234 
+            driver = new DriverSetup().GetDriver("chrome");
             driver.Manage().Window.Maximize();
             login = new Login(driver); //1234
             home = new Home(driver); //1234
             cancelTicket = new CancelTicket(driver); //1234
             trackService = new TrackService(driver);//1234
-            ticketStatus = new TicketStatus();
+            ticketStatus = new TicketStatus(driver);
         }
         [TestMethod]
         public void BookBusTicketAndPrint()
