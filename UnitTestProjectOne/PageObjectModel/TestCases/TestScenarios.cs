@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using UnitTestProjectOne.PageObjectModel.DriverUtilities;
+using UnitTestProjectOne.PageObjectModel.GeneralUtilities;
 using UnitTestProjectOne.PageObjectModel.PageObjects;
 
 namespace UnitTestProjectOne.PageObjectModel.TestCases
@@ -21,9 +22,11 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
         CancelTicket cancelTicket ;
         TrackService trackService ;
         TicketStatus ticketStatus ;
+        ReadJsonData readJsonData;
         public TestScenarios()
         {
             //driver = new ChromeDriver(); // 1234 
+            readJsonData = new ReadJsonData();
             driver = new DriverSetup().GetDriver("chrome");
             driver.Manage().Window.Maximize();
             login = new Login(driver); //1234
