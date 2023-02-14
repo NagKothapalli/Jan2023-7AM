@@ -100,6 +100,8 @@
     <Compile Include="MultilevelInheritance\TestSuites.cs" />
     <Compile Include="PageObjectModel\DriverUtilities\DriverSetup.cs" />
     <Compile Include="PageObjectModel\DriverUtilities\WebDriverDriverUtilities.cs" />
+    <Compile Include="PageObjectModel\GeneralUtilities\Base.cs" />
+    <Compile Include="PageObjectModel\GeneralUtilities\ReadConfigData.cs" />
     <Compile Include="PageObjectModel\GeneralUtilities\ReadJsonData.cs" />
     <Compile Include="PageObjectModel\PageObjects\CancelTicket.cs" />
     <Compile Include="PageObjectModel\PageObjects\Home.cs" />

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using UnitTestProjectOne.PageObjectModel.DriverUtilities;
+using UnitTestProjectOne.PageObjectModel.GeneralUtilities;
 
 namespace UnitTestProjectOne.PageObjectModel.PageObjects
 {
@@ -13,10 +14,12 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
     {
         IWebDriver driver;//null
         WebDriverDriverUtilities dUtils;
-        public TicketStatus(IWebDriver mydriver) //1234
+        UserData userData;
+        public TicketStatus(Base mybase) //1234
         {
-            driver = mydriver; //1234
-            dUtils = new WebDriverDriverUtilities(driver); //1234
+            driver = mybase.driver; //1234
+            dUtils = mybase.dUtils; //1234
+            userData = mybase.userData;
         }
         //**********************************XPATHS*************************
         String TicketStatusTab = "//a[@title='Ticket Status']";
@@ -31,7 +34,7 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
         public void CheckStatusOfBusTicket()
         {
             Debug.WriteLine("RC : CheckStatusOfBusTicket ");
-            dUtils.EnterText(TicketNoTxt, "45435435");
+            dUtils.EnterText(TicketNoTxt, userData.TicketNumber);
             dUtils.ClickElement(SubmitBtn);
         }
     }

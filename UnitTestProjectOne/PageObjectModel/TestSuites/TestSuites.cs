@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UnitTestProjectOne.PageObjectModel.GeneralUtilities;
 using UnitTestProjectOne.PageObjectModel.TestCases;
 
 namespace UnitTestProjectOne.PageObjectModel.TestSuites
@@ -12,7 +13,13 @@ namespace UnitTestProjectOne.PageObjectModel.TestSuites
     [TestClass]
     public class TestSuites
     {
-        TestScenarios testScenarios = new TestScenarios();
+        TestScenarios testScenarios ;
+        Base mybase;
+        public TestSuites()
+        {
+            mybase = new Base();
+            testScenarios = new TestScenarios(mybase);
+        }
         [TestMethod]
         public void SmokeSuite()
         {

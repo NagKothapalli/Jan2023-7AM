@@ -16,26 +16,28 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
     [TestClass]
     public class TestScenarios // : Login //, Home
     {
-        IWebDriver driver ; // null        
+        //IWebDriver driver ; // null        
         Login login ;
         Home home ;
         CancelTicket cancelTicket ;
         TrackService trackService ;
         TicketStatus ticketStatus ;
-        ReadJsonData readJsonData;
-        public TestScenarios()
+        //UserData userData;
+        //ConfigData configData;
+        public TestScenarios(Base mybase)
         {
             //driver = new ChromeDriver(); // 1234 
-            readJsonData = new ReadJsonData();
-            driver = new DriverSetup().GetDriver("chrome");
-            driver.Manage().Window.Maximize();
-            login = new Login(driver); //1234
-            home = new Home(driver); //1234
-            cancelTicket = new CancelTicket(driver); //1234
-            trackService = new TrackService(driver);//1234
-            ticketStatus = new TicketStatus(driver);
+            //configData = new ReadConfigData().ReadConfig();
+            //userData = new ReadJsonData().ReadTestData(configData.Environment);
+            //driver = new DriverSetup().GetDriver(configData.Browser);
+            mybase.driver.Manage().Window.Maximize();
+            login = new Login(mybase); //1234
+            home = new Home(mybase); //1234
+            cancelTicket = new CancelTicket(mybase); //1234
+            trackService = new TrackService(mybase);//1234
+            ticketStatus = new TicketStatus(mybase);
         }
-        [TestMethod]
+       // [TestMethod]
         public void BookBusTicketAndPrint()
         {
             Debug.WriteLine("Test Case : BookBusTicketAndPrint ");
@@ -47,7 +49,7 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
             login.LogoutFromApplication();
             login.CloseApplication();
         }
-        [TestMethod]
+       // [TestMethod]
         public void BookBusTicketAndCancel()
         {
             Debug.WriteLine("Test Case : BookBusTicketAndCancel ");
@@ -60,7 +62,7 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
             login.LogoutFromApplication();
             login.CloseApplication();
         }
-        [TestMethod]
+       // [TestMethod]
         public void BookBusTicketAndTrackService()
         {
             Debug.WriteLine("Test Case : BookBusTicketAndTrackService ");
@@ -73,7 +75,7 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
             login.LogoutFromApplication();
             login.CloseApplication();
         }
-        [TestMethod]
+       // [TestMethod]
         public void BookBusTicketAndCheckStatus()
         {
             Debug.WriteLine("Test Case : BookBusTicketAndCheckStatus ");
@@ -86,7 +88,7 @@ namespace UnitTestProjectOne.PageObjectModel.TestCases
             login.LogoutFromApplication();
             login.CloseApplication();
         }
-        [TestMethod]
+      //  [TestMethod]
         public void BookBusTicketPrintAndCheckStatus()
         {
             Debug.WriteLine("Test Case : BookBusTicketPrintAndCheckStatus ");

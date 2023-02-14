@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using UnitTestProjectOne.PageObjectModel.DriverUtilities;
+using UnitTestProjectOne.PageObjectModel.GeneralUtilities;
 
 namespace UnitTestProjectOne.PageObjectModel.PageObjects
 {
@@ -13,10 +14,12 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
     {
         IWebDriver driver;//null
         WebDriverDriverUtilities dUtils;
-        public CancelTicket(IWebDriver mydriver) //1234
+        UserData userData;
+        public CancelTicket(Base mybase) //1234
         {
-            driver = mydriver; //1234
-            dUtils = new WebDriverDriverUtilities(driver); //1234
+            driver = mybase.driver; //1234
+            dUtils = mybase.dUtils; //1234
+            userData = mybase.userData;
         }
         //**********************************XPATHS*************************
         String CancelTicketTab = "//a[@title='Cancel Ticket']";
@@ -33,9 +36,9 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
         public void CancelBusTicket()
         {
             Debug.WriteLine("RC : CancelBusTicket ");
-            dUtils.EnterText(TicketNoTxt, "1234665656");
-            dUtils.EnterText(UIDNoTxt, "565453454");
-            dUtils.EnterText(MobileNumTxt, "9959775757");
+            dUtils.EnterText(TicketNoTxt, userData.TicketNumber);
+            dUtils.EnterText(UIDNoTxt, userData.UIDNumber);
+            dUtils.EnterText(MobileNumTxt, userData.MobileNumber);
             dUtils.ClickElement(SearchBtn);
         }
     }

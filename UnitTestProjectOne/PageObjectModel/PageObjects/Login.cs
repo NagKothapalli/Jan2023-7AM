@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using UnitTestProjectOne.PageObjectModel.DriverUtilities;
 using UnitTestProjectOne.PageObjectModel.GeneralUtilities;
 
 namespace UnitTestProjectOne.PageObjectModel.PageObjects
@@ -13,10 +14,12 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
     {
         IWebDriver driver;//null
         UserData userData;
-        public Login(IWebDriver mydriver) //1234
+        WebDriverDriverUtilities dUtils;
+        public Login(Base mybase) //1234
         {
-            driver = mydriver; //1234
-            userData = new ReadJsonData().ReadTestData("Dev");
+            driver = mybase.driver; //1234
+            dUtils = mybase.dUtils; //1234
+            userData = mybase.userData;
         }
         public void LaunchApplication()
         {

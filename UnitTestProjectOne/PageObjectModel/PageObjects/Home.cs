@@ -20,11 +20,14 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
         WebDriverDriverUtilities dUtils;
         ReadJsonData readJsonData;
         UserData userData;
-        public Home(IWebDriver mydriver) //1234
+        public Home(Base mybase) //1234
         {
-            driver = mydriver; //1234
-            dUtils = new WebDriverDriverUtilities(driver); //1234
-            userData = new ReadJsonData().ReadTestData("Dev");
+            //driver = mydriver; //1234
+            //dUtils = new WebDriverDriverUtilities(driver); //1234
+            //userData = new ReadJsonData().ReadTestData("Dev");
+            driver = mybase.driver; //1234
+            dUtils = mybase.dUtils; //1234
+            userData = mybase.userData;
         }
         //[FindsBy(How = How.Id, Sink = "username")] private IWebElement UserName;
         //**********************************XPATHS*************************

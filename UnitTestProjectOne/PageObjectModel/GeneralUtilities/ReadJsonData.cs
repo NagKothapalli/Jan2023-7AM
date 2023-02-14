@@ -17,7 +17,7 @@ namespace UnitTestProjectOne.PageObjectModel.GeneralUtilities
             //F:\GE-WorkSpace\Jan2023-7AM\UnitTestProjectOne\bin\Debug    - BaseDirectory
             //F:\GE-WorkSpace\Jan2023-7AM\UnitTestProjectOne\  + 
             //F:\GE-WorkSpace\Jan2023-7AM\UnitTestProjectOne\PageObjectModel\TestData\DevData.json
-            JsonFilePath = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug", @"\") + "PageObjectModel\\TestData\\DevData.json";
+            JsonFilePath = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug", @"\") + "PageObjectModel\\TestData\\"+env+"Data.json";
             userData = JsonConvert.DeserializeObject<UserData>(File.ReadAllText(JsonFilePath));
             return userData;
         }
@@ -30,6 +30,10 @@ namespace UnitTestProjectOne.PageObjectModel.GeneralUtilities
         public string FromCity;
         public string ToCity;
         public string JDate;
+        public string TicketNumber;
+        public string ServiceNumber;
+        public string UIDNumber;
+        public string MobileNumber;
     }
 
    

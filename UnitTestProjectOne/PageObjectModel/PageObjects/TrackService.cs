@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using UnitTestProjectOne.PageObjectModel.DriverUtilities;
+using UnitTestProjectOne.PageObjectModel.GeneralUtilities;
 
 namespace UnitTestProjectOne.PageObjectModel.PageObjects
 {
@@ -14,10 +15,12 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
 
         IWebDriver driver;//null
         WebDriverDriverUtilities dUtils;
-        public TrackService(IWebDriver mydriver) //1234
+        UserData userData;
+        public TrackService(Base mybase) //1234
         {
-            driver = mydriver; //1234
-            dUtils = new WebDriverDriverUtilities(driver); //1234
+            driver = mybase.driver; //1234
+            dUtils = mybase.dUtils; //1234
+            userData = mybase.userData;
         }
         //**********************************XPATHS*************************
         String TrackServiceTab = "//a[@title='Track Service']"; 
@@ -32,7 +35,7 @@ namespace UnitTestProjectOne.PageObjectModel.PageObjects
         public void TrackServiceOfBusTicket()
         {
             Debug.WriteLine("RC : TrackServiceOfBusTicket ");
-            dUtils.EnterText(ServiceNoTxt, "4455");
+            dUtils.EnterText(ServiceNoTxt, userData.ServiceNumber);
             dUtils.ClickElement(TrackBusBtn);
         }
     }
