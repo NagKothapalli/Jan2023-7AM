@@ -14,11 +14,33 @@ Scenario: Subtract two numbers
  When the two numbers are subtracted
  Then validate the result
 
-@mytag
+@smoke
 Scenario: Add two numbers
 	Given the first number is 50
 	And the second number is 70
 	When the two numbers are added
 	Then the result should be 120
+
+@regression
+Scenario: Login to Application
+	Given I Launched Application with 'https://gmail.com'
+	When I enter user credentials with 'nag123@gmail.com' 'abcd1234'
+	Then I should be logged in Successfully
+@datadriven
+Scenario Outline: Login To Application DataDriven
+	Given User Launched Application '<URL>'
+	When User Gave Login Details '<UserName>' '<PassWord>'
+	Then User should be logged in Successfully
+
+	Examples: 
+	| URL                   | UserName | PassWord |
+	| https://gmail.com     | ram      | abcd     |
+	| https://dev.gmail.com | ravi     | xyz123   |
+	| https://qa.gmail.com  | ramesh   | hfg456   |
+	| https://gmail.com     | ram      | abcd     |
+	| https://dev.gmail.com | ravi     | xyz123   |
+	| https://qa.gmail.com  | ramesh   | hfg456   |
+
+
 
 
