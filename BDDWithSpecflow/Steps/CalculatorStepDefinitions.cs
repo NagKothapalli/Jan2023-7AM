@@ -17,6 +17,7 @@ namespace BDDWithSpecflow.Steps
             _scenarioContext = scenarioContext;
         }
 
+        
         //******************************
         int fnumber;
         int snumber;

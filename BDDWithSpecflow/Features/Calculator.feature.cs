@@ -95,6 +95,15 @@ Link to a feature: [Calculator](BDDWithSpecflow/Features/Calculator.feature)
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 8
+#line hidden
+#line 9
+testRunner.Given("User Cleared the temp Records", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Subtract two numbers")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Calculator")]
@@ -105,7 +114,7 @@ Link to a feature: [Calculator](BDDWithSpecflow/Features/Calculator.feature)
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subtract two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -125,16 +134,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 12
- testRunner.Given("user gave the first number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 13
- testRunner.And("user gave the second number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 14
- testRunner.When("the two numbers are subtracted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
+this.FeatureBackground();
 #line hidden
 #line 15
+ testRunner.Given("user gave the first number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 16
+ testRunner.And("user gave the second number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+ testRunner.When("the two numbers are subtracted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 18
  testRunner.Then("validate the result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -151,7 +163,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 18
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -171,16 +183,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 19
- testRunner.Given("the first number is 50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 20
- testRunner.And("the second number is 70", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 21
- testRunner.When("the two numbers are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 8
+this.FeatureBackground();
 #line hidden
 #line 22
+ testRunner.Given("the first number is 50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 23
+ testRunner.And("the second number is 70", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 24
+ testRunner.When("the two numbers are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 25
  testRunner.Then("the result should be 120", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -191,13 +206,15 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Login to Application")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Calculator")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("regression")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("smoke")]
         public virtual void LoginToApplication()
         {
             string[] tagsOfScenario = new string[] {
-                    "regression"};
+                    "regression",
+                    "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login to Application", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 25
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -217,13 +234,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 26
+#line 8
+this.FeatureBackground();
+#line hidden
+#line 29
  testRunner.Given("I Launched Application with \'https://gmail.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 27
+#line 30
  testRunner.When("I enter user credentials with \'nag123@gmail.com\' \'abcd1234\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 31
  testRunner.Then("I should be logged in Successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -244,7 +264,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("UserName", userName);
             argumentsOfScenario.Add("PassWord", passWord);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login To Application DataDriven", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 30
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -264,13 +284,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 31
+#line 8
+this.FeatureBackground();
+#line hidden
+#line 35
  testRunner.Given(string.Format("User Launched Application \'{0}\'", uRL), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 32
+#line 36
  testRunner.When(string.Format("User Gave Login Details \'{0}\' \'{1}\'", userName, passWord), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 37
  testRunner.Then("User should be logged in Successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -287,7 +310,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PassWord", "abcd")]
         public virtual void LoginToApplicationDataDriven_Variant0()
         {
-#line 30
+#line 34
 this.LoginToApplicationDataDriven("https://gmail.com", "ram", "abcd", ((string[])(null)));
 #line hidden
         }
@@ -302,7 +325,7 @@ this.LoginToApplicationDataDriven("https://gmail.com", "ram", "abcd", ((string[]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PassWord", "xyz123")]
         public virtual void LoginToApplicationDataDriven_Variant1()
         {
-#line 30
+#line 34
 this.LoginToApplicationDataDriven("https://dev.gmail.com", "ravi", "xyz123", ((string[])(null)));
 #line hidden
         }
@@ -317,7 +340,7 @@ this.LoginToApplicationDataDriven("https://dev.gmail.com", "ravi", "xyz123", ((s
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PassWord", "hfg456")]
         public virtual void LoginToApplicationDataDriven_Variant2()
         {
-#line 30
+#line 34
 this.LoginToApplicationDataDriven("https://qa.gmail.com", "ramesh", "hfg456", ((string[])(null)));
 #line hidden
         }
@@ -332,7 +355,7 @@ this.LoginToApplicationDataDriven("https://qa.gmail.com", "ramesh", "hfg456", ((
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PassWord", "abcd")]
         public virtual void LoginToApplicationDataDriven_Variant3()
         {
-#line 30
+#line 34
 this.LoginToApplicationDataDriven("https://gmail.com", "ram", "abcd", ((string[])(null)));
 #line hidden
         }
@@ -347,7 +370,7 @@ this.LoginToApplicationDataDriven("https://gmail.com", "ram", "abcd", ((string[]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PassWord", "xyz123")]
         public virtual void LoginToApplicationDataDriven_Variant4()
         {
-#line 30
+#line 34
 this.LoginToApplicationDataDriven("https://dev.gmail.com", "ravi", "xyz123", ((string[])(null)));
 #line hidden
         }
@@ -362,7 +385,7 @@ this.LoginToApplicationDataDriven("https://dev.gmail.com", "ravi", "xyz123", ((s
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PassWord", "hfg456")]
         public virtual void LoginToApplicationDataDriven_Variant5()
         {
-#line 30
+#line 34
 this.LoginToApplicationDataDriven("https://qa.gmail.com", "ramesh", "hfg456", ((string[])(null)));
 #line hidden
         }
