@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using BDDWithSpecflow.Hooks;
 using BDDWithSpecflow.PageObjects;
 using TechTalk.SpecFlow;
 
@@ -27,6 +28,7 @@ namespace BDDWithSpecflow.Steps
         {
             fnumber = 22;
             Debug.WriteLine("First Number:" +fnumber);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "User First Number", null);
         }
 
         [Given(@"user gave the second number")]
@@ -34,6 +36,7 @@ namespace BDDWithSpecflow.Steps
         {
             snumber = 12;
             Debug.WriteLine("Second Number:" + snumber);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "User Second Number", null);
         }
 
         [When(@"the two numbers are subtracted")]
@@ -41,15 +44,18 @@ namespace BDDWithSpecflow.Steps
         {
             diff = fnumber - snumber;
             Debug.WriteLine("Perform Subtraction");
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "Subtraction", null);
         }
 
         [Then(@"validate the result")]
         public void ThenValidateTheResult()
         {
             Debug.WriteLine("Difference of two numbers :" + diff);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "User First Name", null);
         }
 
-
+        //M1.feature  , M2.feature  , M3.feature  .....
+        //M1Steps.cs  , M2Steps.cs , M3Steps.cs .....  [Binding]
 
         //***********************************
         int sum;
@@ -57,6 +63,7 @@ namespace BDDWithSpecflow.Steps
         public void GivenTheFirstNumberIs(int number)
         {
             Debug.WriteLine("First Number :" + number);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "User First Name", null);
             fnumber = number;
         }
 
@@ -64,6 +71,7 @@ namespace BDDWithSpecflow.Steps
         public void GivenTheSecondNumberIs(int number)
         {
             Debug.WriteLine("Second Number :" + number);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "User First Name", null);
             snumber = number;
         }
 
@@ -72,6 +80,7 @@ namespace BDDWithSpecflow.Steps
         {
             sum = fnumber + snumber;
             Debug.WriteLine("Sum of the two numbers :" + sum);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "User First Name", null);
         }
 
         [Then("the result should be (.*)")]
@@ -92,6 +101,7 @@ namespace BDDWithSpecflow.Steps
         {
             //Debug.WriteLine("Launch the Application :" + URL);
             login.LaunchApplication(URL);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "Launch", null);
         }
 
         [When(@"I enter user credentials with '(.*)' '(.*)'")]
@@ -100,6 +110,7 @@ namespace BDDWithSpecflow.Steps
             //Debug.WriteLine("Enter User Name  :" + UserName);
             //Debug.WriteLine("Enter PassWord  :" + PassWord);
             login.LoginToApplication(UserName, PassWord);
+            MyHooks.test.Log(AventStack.ExtentReports.Status.Pass, "User Login" + MyHooks.test.AddScreenCaptureFromPath(""), null);
         }
 
         [Then(@"I should be logged in Successfully")]
