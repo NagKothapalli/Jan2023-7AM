@@ -68,11 +68,14 @@ namespace BDDWithSpecflow.Hooks
         public static void CloseApplication()
         {
             string reportFilePathOld = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug\netcoreapp3.1\", @"\") + "Reports\\index.html";          
-            string reportFilePathNew = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug\netcoreapp3.1\", @"\") + "Reports\\Report-"+ new Random().Next(00000, 99999) + ".html";
+            string reportFilePathNew = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug\netcoreapp3.1\", @"\") + "Reports\\Apsrtc-"+ new Random().Next(00000, 99999) + ".html";
             
             Debug.WriteLine("User Launched Gmail Application - by feature hook ");
             extent.Flush();
             System.IO.File.Move(reportFilePathOld, reportFilePathNew);
         }
+      //  F:\GE-WorkSpace\Jan2023-7AM\BDDWithSpecflow\netcoreapp3.1\PageObjectModel\TestData\Config.json'.
+
+  
     }
 }

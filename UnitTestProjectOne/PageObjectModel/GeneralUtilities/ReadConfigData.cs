@@ -17,7 +17,7 @@ namespace UnitTestProjectOne.PageObjectModel.GeneralUtilities
             //F:\GE-WorkSpace\Jan2023-7AM\UnitTestProjectOne\bin\Debug    - BaseDirectory
             //F:\GE-WorkSpace\Jan2023-7AM\UnitTestProjectOne\  + 
             //F:\GE-WorkSpace\Jan2023-7AM\UnitTestProjectOne\PageObjectModel\TestData\DevData.json
-            JsonFilePath = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug", @"\") + "PageObjectModel\\TestData\\Config.json";
+            JsonFilePath = AppDomain.CurrentDomain.BaseDirectory.Replace(@"\bin\Debug\netcoreapp3.1", @"\") + "TestData\\Config.json";
             configData = JsonConvert.DeserializeObject<ConfigData>(File.ReadAllText(JsonFilePath));
             return configData;
         }

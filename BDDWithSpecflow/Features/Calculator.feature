@@ -8,7 +8,26 @@ Link to a feature: [Calculator](BDDWithSpecflow/Features/Calculator.feature)
 Background: 
 Given User Cleared the temp Records
 
+@rtc
+Scenario: Book a Bus Ticket and Print
+Given User Launched Apsrtc Application
+When User Fills Ticket Details
+Then User Could able to book the ticket
+@rtc
+Scenario: Book a Bus Ticket and Track Service
+Given User Launched Apsrtc Application
+When User Fills Ticket Details
+Then User Could able to book the ticket
+When User Track the Service With Ticket Number
+Then User Could able to track the service
 
+@rtc
+Scenario: Book a Bus Ticket and Cancel Ticket
+Given User Launched Apsrtc Application
+When User Fills Ticket Details
+Then User Could able to book the ticket
+When User Cancel the ticket With Ticket Number
+Then User Could able to Cancel the ticket
 
 @smoke
 Scenario: Subtract two numbers

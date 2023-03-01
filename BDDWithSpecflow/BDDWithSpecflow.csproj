@@ -21,4 +21,8 @@
     <Folder Include="Reports\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UnitTestProjectOne\UnitTestProjectOne.csproj" />
+  </ItemGroup>
+
 </Project>
